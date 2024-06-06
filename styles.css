@@ -1,0 +1,84 @@
+/* styles.css */
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-bottom: 5px solid;
+    animation: borderColorChange 5s infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite; /* Increased duration for slower scroll */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: white;
+}
+
+.clock-container {
+    border: 5px solid;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    animation: borderColorChange 5s infinite;
+    margin-top: 20px;
+}
+
+#clock {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+    color: white;
+    animation: colorChange 10s infinite;
+}
+
+#toggleButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+#toggleButton:hover {
+    background-color: #ddd;
+}
+
+@keyframes colorChange {
+    0% { color: #ff0000; }
+    25% { color: #00ff00; }
+    50% { color: #0000ff; }
+    75% { color: #ffff00; }
+    100% { color: #ff0000; }
+}
+
+@keyframes borderColorChange {
+    0% { border-color: #ff0000; }
+    25% { border-color: #00ff00; }
+    50% { border-color: #0000ff; }
+    75% { border-color: #ffff00; }
+    100% { border-color: #ff0000; }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
